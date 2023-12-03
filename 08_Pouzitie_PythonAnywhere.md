@@ -34,7 +34,20 @@ Malo by to zobraziť niečo ako **Collecting pythonanywhere** a nakoniec skonči
 
 Teraz spustíme pomocníka, ktorý automaticky nakonfiguruje našu aplikáciu z GitHubu. Zadaj nasledujúci príkaz do konzoly na PythonAnywhere (nezabudni použiť užívateľské meno z GitHubu namiesto <your-github-username>, aby sa URL zhodovala s klonovacou URL z GitHubu):
 ~~~
-$ pa_autoconfigure_django.py --python=3.8 https://github.com/<your-github-username>/my-first-blog.git
+$ pa_autoconfigure_django.py --python=3.8 https://github.com/<your-github-username>/my-first-blog.git --nuke --branch=develop --domain=tokos.pythonanywhere.com
+~~~
+* voľba --nuke - určuje aby bol prepísaný skript ktorý už bol vygenerovaný
+* voľba --branch <meno_branch> - určuje ktorá branch má byť použitá pokiaľ ich je na GitHub-e viac
+* voľba domin=<vasa_domena>.pythonanywhere.com
+~~~
+Niektoré užitočné príkazy pre konzolu pythonanywhere.com:
+
+$ du -hs /tmp ~/.[!.]* ~/* | sort -h  - ukáže koľko miesta zaberajú jednotlivé adresáre na disku (max. vy+clenen=z priestor je 512MB)
+
+$ rm -rf ~/tokos.pythonanywhere.com/* - vymaže súbory v danom adresári (tokos.pythonanywhere.com)
+
+Platia tu aj bežné linuxovské príkazy ako ls, cd ..
+
 ~~~
 
 Keď budeš sledovať, ako to beží, uvidíš, čo to robí:
